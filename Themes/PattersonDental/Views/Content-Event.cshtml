@@ -1,0 +1,37 @@
+﻿@using Orchard.ContentManagement
+@using Orchard.MediaLibrary.Models
+@{
+    //var item = Model.ContentItem;
+    //var title = item.TitlePart.Title;
+    //var fields = item.WidgetPart;
+
+    //var props = Model.ContentItem.Parts.GetType().GetProperties();
+    var parts = Model.ContentItem.Parts;
+}
+
+
+   @foreach (var part in parts)
+        {
+                var props = part.GetType().GetProperties();
+                foreach (var prop in props) {
+                  @prop.Name<br />    
+                } 
+
+          //@part.ContentItem<br />
+          var fields = part.Fields;
+          if (fields.Count > 0) {
+
+              foreach (var fld in fields) {
+                  <b>@fld.Name<br /></b>
+                   
+                  <b>@fld.FieldDefinition<br /></b>
+                  
+                  //@fld.Value<br />
+                 
+              }
+
+
+
+        }
+        
+         }

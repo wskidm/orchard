@@ -1,0 +1,18 @@
+﻿@{
+    var contentItem = Model.ContentItem;
+    var product = contentItem.Product;
+
+    var imageUrl = product.ImageUrl.Value;
+    var name = product.ProductName.Value;
+    var number = product.ItemNumber.Value;
+}
+
+<div class="product">
+    <img src="@imageUrl" alt="" />
+    <div class="description">
+        <p>@name</p>
+        <p>Equipment Observatory</p>
+        <p class="small">Item #: @number</p>
+        <a class="button small" href="/equipment/product/@product.Id">View Product</a>
+    </div>
+</div>

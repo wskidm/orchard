@@ -1,0 +1,81 @@
+﻿@{
+    var contentItem = Model.ContentItem;
+    var product = contentItem.Product;
+
+    var imageUrl = product.ImageUrl.Value;
+    var name = product.ProductName.Value;
+    var number = product.ItemNumber.Value;
+    var benefits = product.Benefits.Value;
+    var specs = product.Specifications.Value;
+    var details = product.Details.Value;
+    var resources = product.Resources.Value;
+    var body = HttpUtility.HtmlDecode(contentItem.BodyPart.Text);
+
+}
+
+<div class="productDetail">
+<div class="breadcrumbs">
+
+    <a href="http://www.pattersondental.com">Home</a> >
+    <a href="/equipment">Equipment</a> >
+    <a href="/equipment/category/operatory">Operatory</a> >
+    <span>@name</span>
+
+</div>
+  <div class="productContainer">
+    <img src="@imageUrl" alt="" />
+    <div class="sidebar">
+        <div class="section">
+            <div class="sectionContent">
+            <h2>@name</h2>
+            <p>Item #: @number</p>
+
+            <button>Request A Quote</button>
+            </div>
+            <br style="clear: both" />
+        </div>
+
+        <div class="section">
+            <div class="sectionContent">
+                <h3>Call 1-800-555-5555</h3>
+                <p>Learn more about this product from <br />your local Patterson representative.</p>
+            </div>
+            <img src="/Themes/PattersonDental/Content/representative.png" alt="Representative" />
+            <br style="clear: both" />
+        </div>
+
+        <div class="description">
+            @Html.Raw(HttpUtility.HtmlDecode(body))
+        </div>
+    </div>
+      <br style="clear: both" />
+    </div>
+
+    <div class="tabs">
+        <ul>
+            <li><a href="#tabs-1">Product Details</a></li>
+            <li><a href="#tabs-2">Benefits</a></li>
+            <li><a href="#tabs-3">Specifications</a></li>
+            <li><a href="#tabs-4">Resources</a></li>
+        </ul>
+        <div id="tabs-1">
+            <p>@details</p>
+          </div>
+          <div id="tabs-2">
+            <p>@Html.Raw(HttpUtility.HtmlDecode(benefits))</p>
+          </div>
+          <div id="tabs-3">
+            <p>@specs</p>
+          </div>
+          <div id="tabs-4">
+            <p>@resources</p>
+          </div>
+      </div>
+
+</div>
+
+<script>
+  $(function() {
+    $( ".tabs" ).tabs();
+  });
+</script>

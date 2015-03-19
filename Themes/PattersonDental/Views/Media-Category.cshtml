@@ -1,0 +1,23 @@
+﻿@using Orchard.ContentManagement
+@using Orchard.MediaLibrary.Models
+@using Orchard.Utility.Extensions
+@using Orchard.MediaLibrary.Models
+@model dynamic
+
+@{
+    var contentItem = Model.ContentItem;
+    var category = contentItem.Category;
+
+    var imageUrl = category.ImageUrl.Value;
+    var listUrl = category.ListUrl.Value;
+    var text = category.Text.Value;
+
+    var mediaPart = ((ContentItem)Model.ContentItem).As<MediaPart>();
+}
+
+<div class="category">
+    <a href="/equipment/@listUrl">
+        <img src="@imageUrl" alt="@mediaPart.AlternateText" />
+        <div class="caption">@text</div>
+    </a>
+</div>

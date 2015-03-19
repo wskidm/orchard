@@ -13,6 +13,12 @@
     <Hash>923e168c6264e57b</Hash>
   </Dependency>
   <Dependency>
+    <ExtensionId>Mello.ImageGallery</ExtensionId>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/Mello.ImageGallery/Mello.ImageGallery.csproj</VirtualPath>
+    <Hash>ef589dba9a6ddcc4</Hash>
+  </Dependency>
+  <Dependency>
     <ExtensionId>Orchard.Alias</ExtensionId>
     <LoaderName>PrecompiledExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/Orchard.Alias/bin/Orchard.Alias.dll</VirtualPath>

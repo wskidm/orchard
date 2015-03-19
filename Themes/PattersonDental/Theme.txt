@@ -1,0 +1,7 @@
+Name: Patterson Dental POC
+Author: Solution Design Group
+Website: http://www.pattersondental.com/equipment
+Description: Orchard CMS implementation of the Patterson Dental web design
+Version: 1.0
+# todo: provide tags
+# Tags: Classic, Serif
