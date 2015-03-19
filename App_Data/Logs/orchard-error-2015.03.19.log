@@ -1,0 +1,53 @@
+2015-03-19 10:56:23,127 [13] NHibernate.AdoNet.AbstractBatcher - (null) - Could not execute query: select distinct customform0_.ContentType as col_0_0_ from Orchard_CustomForms_CustomFormPartRecord customform0_
+ (null)
+System.Data.SqlServerCe.SqlCeException (0x80004005): The specified table does not exist. [ Orchard_CustomForms_CustomFormPartRecord ]
+   at System.Data.SqlServerCe.SqlCeCommand.ProcessResults(Int32 hr)
+   at System.Data.SqlServerCe.SqlCeCommand.CompileQueryPlan()
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommand(CommandBehavior behavior, String method, ResultSetOptions options)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\AdoNet\AbstractBatcher.cs:line 223
+2015-03-19 10:56:25,895 [13] NHibernate.Util.ADOExceptionReporter - (null) - The specified table does not exist. [ Orchard_CustomForms_CustomFormPartRecord ]
+ (null)
+2015-03-19 10:56:25,903 [13] NHibernate.Util.ADOExceptionReporter - (null) - The specified table does not exist. [ Orchard_CustomForms_CustomFormPartRecord ]
+ (null)
+2015-03-19 10:56:25,907 [13] NHibernate.Util.ADOExceptionReporter - (null) - The specified table does not exist. [ Orchard_CustomForms_CustomFormPartRecord ]
+ (null)
+2015-03-19 10:56:25,911 [13] Orchard.Exceptions.DefaultExceptionPolicy - Default - An unexpected exception was caught
+ http://localhost:57489/Admin/Modules/Features
+NHibernate.Exceptions.GenericADOException: could not execute query
+[ select distinct customform0_.ContentType as col_0_0_ from Orchard_CustomForms_CustomFormPartRecord customform0_ ]
+[SQL: select distinct customform0_.ContentType as col_0_0_ from Orchard_CustomForms_CustomFormPartRecord customform0_] ---> System.Data.SqlServerCe.SqlCeException: The specified table does not exist. [ Orchard_CustomForms_CustomFormPartRecord ]
+   at System.Data.SqlServerCe.SqlCeCommand.ProcessResults(Int32 hr)
+   at System.Data.SqlServerCe.SqlCeCommand.CompileQueryPlan()
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommand(CommandBehavior behavior, String method, ResultSetOptions options)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\AdoNet\AbstractBatcher.cs:line 229
+   at NHibernate.Loader.Loader.GetResultSet(IDbCommand st, Boolean autoDiscoverTypes, Boolean callable, RowSelection selection, ISessionImplementor session) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Loader\Loader.cs:line 1224
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Loader\Loader.cs:line 419
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Loader\Loader.cs:line 251
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Loader\Loader.cs:line 1564
+   --- End of inner exception stack trace ---
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Loader\Loader.cs:line 1571
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Loader\Loader.cs:line 1472
+   at NHibernate.Loader.Loader.List(ISessionImplementor session, QueryParameters queryParameters, ISet`1 querySpaces, IType[] resultTypes) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Loader\Loader.cs:line 1465
+   at NHibernate.Hql.Ast.ANTLR.Loader.QueryLoader.List(ISessionImplementor session, QueryParameters queryParameters) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Hql\Ast\ANTLR\Loader\QueryLoader.cs:line 288
+   at NHibernate.Hql.Ast.ANTLR.QueryTranslatorImpl.List(ISessionImplementor session, QueryParameters queryParameters) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Hql\Ast\ANTLR\QueryTranslatorImpl.cs:line 109
+   at NHibernate.Engine.Query.HQLQueryPlan.PerformList(QueryParameters queryParameters, ISessionImplementor session, IList results) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Engine\Query\HQLQueryPlan.cs:line 89
+   at NHibernate.Impl.SessionImpl.List(IQueryExpression queryExpression, QueryParameters queryParameters, IList results) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Impl\SessionImpl.cs:line 659
+   at NHibernate.Impl.AbstractSessionImpl.List(IQueryExpression queryExpression, QueryParameters parameters) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Impl\AbstractSessionImpl.cs:line 92
+   at NHibernate.Impl.ExpressionQueryImpl.List() in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Impl\ExpressionQueryImpl.cs:line 58
+   at NHibernate.Linq.DefaultQueryProvider.ExecuteQuery(NhLinqExpression nhLinqExpression, IQuery query, NhLinqExpression nhQuery) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Linq\DefaultQueryProvider.cs:line 103
+   at NHibernate.Linq.DefaultQueryProvider.Execute(Expression expression) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Linq\DefaultQueryProvider.cs:line 35
+   at NHibernate.Linq.DefaultQueryProvider.Execute[TResult](Expression expression) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Linq\DefaultQueryProvider.cs:line 40
+   at Remotion.Linq.QueryableBase`1.GetEnumerator() in :line 0
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Orchard.CustomForms.Permissions.<GetPermissions>d__0.MoveNext()
+   at Orchard.Roles.Services.RoleService.GetPermissionDescription(String permissionName)
+   at Orchard.Roles.Services.RoleService.CreatePermissionForRole(String roleName, String permissionName)
+   at Orchard.Roles.DefaultRoleUpdater.AddDefaultRolesForFeature(Feature feature)
+   at Orchard.Roles.DefaultRoleUpdater.Orchard.Environment.IFeatureEventHandler.Installing(Feature feature)
+   at Orchard.Events.DelegateHelper.<>c__DisplayClass2b`2.<BuildAction>b__2a(Object target, Object[] p) in z:\Builds\work\d1eb156ccc3cb14\src\Orchard\Events\DelegateHelper.cs:line 116
+   at Orchard.Events.DefaultOrchardEventBus.TryInvokeMethod(IEventHandler eventHandler, Type 
